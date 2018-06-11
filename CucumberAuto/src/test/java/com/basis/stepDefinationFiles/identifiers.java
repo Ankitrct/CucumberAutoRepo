@@ -1,7 +1,7 @@
 package com.basis.stepDefinationFiles;
 
 public class identifiers {
-	 public String URL = "https://wctrtst.amcnetworks.com/axf/faces/command/CommandExecutor.jspx?cmd=StartOpenSolutionWorkspace&sol=OpenSolutionWorkspace";
+	 public String URL = "http://demoqa.com/";
      public String User_id = "Atiwari";
      public String Password = "686@Anuanup";
      public String Username_field = "username";

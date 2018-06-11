@@ -1,8 +1,6 @@
-Feature: Logging feature
+Feature: Launch application
 
-Scenario: Verify login functionality 
+Scenario: Verify user is able to launch the application url
 
 Given Launch application url
-When Enter username and password 
-And Click login button
-Then User is able to log in succesfully
+Then User is navigated to the home page
