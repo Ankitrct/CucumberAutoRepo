@@ -2,24 +2,36 @@ package com.basis.stepDefinationFiles;
 
 public class identifiers {
 	 public String URL = "http://demoqa.com/";
-     public String User_id = "Atiwari";
-     public String Password = "686@Anuanup";
-     public String Username_field = "username";
-     public String Password_field = "password";
-     public String Submit_button = "btnSubmit";
-     public String Task_list = "//a[@id='pt1:r1:0:r1:0:vldc:vsdfsdftpdc:j_id__ctru9pc6:j_id__ctru2pc7:wvemi']";
-     public String Task_table = "//table[@summary='Main Task List']";
+     public String homePage = "entry-title";
+     
+     public String registrationlink = "Registration";
+     
+     public String fname = "name_3_firstname";
+     public String lname = "name_3_lastname";
+     
+     //Marital status section findbyelements and loop to select one
+     public String maritalStatus = "radio_wrap";
+     
+     
+     
+     public String country = "dropdown_7";
+     public String month = "mm_date_8";
+     public String day = "dd_date_8";
+     public String year = "yy_date_8";
 
-     // public string Task_table = "//DIV[@id='pt1:r1:0:r1:0:tldc:taskTable::db']";
+    
 
-     public String assigneeFilter_identifier = "//SELECT[@id='pt1:r1:0:r1:0:tldc:assigneeFilter::content']";
-     public String statusFilter_identifier = "//SELECT[@id='pt1:r1:0:r1:0:tldc:statusFilter::content']";
+     public String phone = "phone_9";
+     
+     public String username  = "username";
 
-     public String searchbox_identifier = "pt1:r1:0:r1:0:tldc:keywordFilter";
-     public String searchicon_identifier = "//IMG[@id='pt1:r1:0:r1:0:tldc:searchButton::icon']";
-     public String refreshbutton_identifier = "//IMG[@id='pt1:r1:0:r1:0:tldc:refreshTaskListButton::icon']";
-     public String preferancelink_identifier = "Preferences";
-     public String preferancedialog_identifier = "//BUTTON[@id='d2::cancel']";
+     public String email = "email_1";
+     public String aboutyourself = "description";
+     
+     public String password = "password_2";
+     public String confirmPassword = "confirm_password_password_2";
+     
+     public String submit = "pie_submit";
 
      public String pencil = "//IMG[@id='pt1:r1:0:r1:0:tldc:vtsdbdc:editViewButton::icon']";
      public String due_soon = "//A[@id='pt1:r1:0:r1:0:vldc:vsdfsdftpdc:j_id__ctru9pc6j_id_1:j_id__ctru2pc8j_id_1:wvemi']";

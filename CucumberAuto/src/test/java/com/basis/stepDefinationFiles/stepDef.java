@@ -2,11 +2,15 @@ package com.basis.stepDefinationFiles;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import org.junit.Assert;
+
 
 public class stepDef {
 	
@@ -32,7 +36,8 @@ public class stepDef {
 	@Then("^User is navigated to the home page$")
 	public void homePage()
 	{
-		//Assert that user is able to log in to the application 
+		WebElement homepage = driver.findElement(By.className(idfr.homePage));
+	    Assert.assertTrue(homepage.isDisplayed());
 	}
 
 }
