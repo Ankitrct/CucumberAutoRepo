@@ -10,7 +10,9 @@ public class identifiers {
      public String lname = "name_3_lastname";
      
      //Marital status section findbyelements and loop to select one
-     public String maritalStatus = "radio_wrap";
+     public String maritalStatus = "radio_4[]";
+     
+     public String hobby = "checkbox_5[]";
      
      
      

@@ -11,6 +11,8 @@ import cucumber.api.junit.Cucumber;
 		//user can specify the folder path of multiple feature files and stepdefination files separated by commas
 		//if they are scattered to different folders in the project (if there are duplicate steps in different step defination files then it will give error
 		
+		monochrome = true,
+		//dryRun = true,
 		features= {"src/test/resources/com/basis/featureFiles/"},
 		glue={"com/basis/stepDefinationFiles/"},
 		
