@@ -8,7 +8,6 @@ Given Launch application url
 Scenario: Verify user is navigated to home page
 
 Given User is navigated to the home page
-Then Close the browser session
 
 
 Scenario: Verify new user is able resgister new account 
@@ -28,7 +27,7 @@ And Select DOB
 And Enter details in about yourself section
 And Click submit button
 But Verify that the new user is able to register account
-Then Close the browser session
+
 
 
 @Smoke 
@@ -50,7 +49,7 @@ And Enter "<password>" as password
 And Re-enter passwrod "<passowrd>" as confirm passowrd
 And Click submit button
 But Verify that the new user is able to register account
-Then Close the browser session
+
 Examples:
 | firstname  |  lastname | phonenumber | username    |  emailid        | password   |
 | Jerry	     | Dan    | 1112223333  | JerryTest1  |  test@gmail.com | 234@Test12 | 

@@ -11,6 +11,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import cucumber.api.DataTable;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.But;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -22,14 +24,17 @@ public class stepDef {
 	WebDriver driver; 
 	identifiers idfr = new identifiers();
 	
+	@Before
+	public void TestInitialize() {
+	String path = "C:\\Users\\atiwari\\Desktop\\Learning\\WebDrivers\\chromedriver_win32\\chromedriver.exe";
+		
+		System.setProperty("webdriver.chrome.driver", path);
+		driver = new ChromeDriver();
+	}
 		
 	@Given("^Launch application url$")
 	public void launchUrl() {
 	
-		String path = "C:\\Users\\atiwari\\Desktop\\Learning\\WebDrivers\\chromedriver_win32\\chromedriver.exe";
-		
-		System.setProperty("webdriver.chrome.driver", path);
-		driver = new ChromeDriver();
 		driver.get(idfr.URL);		
 		
 		driver.manage().window().maximize();
@@ -128,10 +133,7 @@ public class stepDef {
 		WebElement description = driver.findElement(By.id(idfr.aboutyourself));
 		description.sendKeys("Data entered for test");	
 	  
-	}
-
-	
-	// test Start
+	}	
 	
 	@Given("^Enter \"([^\"]*)\" as firstname$")
 	public void enter_firstname(String fname) throws Throwable {
@@ -176,10 +178,7 @@ public class stepDef {
 	public void confirm_passowrd(String confirmpassowrdvalue) throws Throwable {
 		 WebElement confirmpassword = driver.findElement(By.id(idfr.confirmPassword));
 		 confirmpassword.sendKeys(confirmpassowrdvalue);
-	}
-	
-	//test End	
-	
+	}	
 	
 	@Then("^Click submit button$")
 	public void click_submit_button() {
@@ -191,9 +190,9 @@ public class stepDef {
 	public void verify_that_the_new_user_is_able_to_register_account()  {
 	    
 		//Assert if user is able to register the account	    
-	}	
+	}		
 	
-	@Then("^Close the browser session$")
+	@After
 	public void closebrowser() {
 		driver.quit();
 		driver = null;
