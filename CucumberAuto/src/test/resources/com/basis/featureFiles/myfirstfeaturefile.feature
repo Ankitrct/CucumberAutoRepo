@@ -1,31 +1,29 @@
 Feature: Launch application
 
-Scenario: Verify user is able to launch the application url
-
+Background: Launch url and login
 Given Launch application url
-Then User is navigated to the home page
+
+Scenario: Verify user is navigated to home page
+
+Given User is navigated to the home page
 Then Close the browser session
 
 
-#Feature: Register user
-
 Scenario: Verify new user is able resgister new account 
 
-Given Launch application url
-Then User is navigated to the home page
+Given User is navigated to the home page
 And Click on registration link
-And Enter firstname
-And Enter Lastname
+Then Enter firstname , lastname , phonenumber , username , email id and password
+
+| firstname  |  lastname | phonenumber | username    |  emailid        | password   |
+| Ankit	     | Tiwari    | 1111111111  | AnkitTest1  |  test@gmail.com | 234@Test12 | 
+| Sonia	     | Bali      | 2222222222  | SoniaTest1  |  test1@gmail.com| 568@Test12 | 
+
 And Select marital status as single
 And Select hobby as dance
 And Select country as United States
 And Select DOB
-And Enter phone number
-And Enter username
-And Enter e-mail id
 And Enter details in about yourself section
-And Enter password
-And Re-enter password to confirm
 And Click submit button
 But Verify that the new user is able to register account
 Then Close the browser session

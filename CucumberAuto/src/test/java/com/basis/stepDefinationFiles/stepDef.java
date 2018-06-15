@@ -1,7 +1,6 @@
 package com.basis.stepDefinationFiles;
 
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -11,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import cucumber.api.DataTable;
 import cucumber.api.java.en.But;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -24,8 +24,8 @@ public class stepDef {
 	
 		
 	@Given("^Launch application url$")
-	public void launchUrl()
-	{
+	public void launchUrl() {
+	
 		String path = "C:\\Users\\atiwari\\Desktop\\Learning\\WebDrivers\\chromedriver_win32\\chromedriver.exe";
 		
 		System.setProperty("webdriver.chrome.driver", path);
@@ -33,20 +33,18 @@ public class stepDef {
 		driver.get(idfr.URL);		
 		
 		driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10 , TimeUnit.SECONDS);		
-		
+        driver.manage().timeouts().implicitlyWait(10 , TimeUnit.SECONDS); 
+        
 	}
 	
 	
-	@Then("^User is navigated to the home page$")
-	public void homePage()
-	{
+	@Given("^User is navigated to the home page$")
+	public void homePage() {
+	
 		WebElement homepage = driver.findElement(By.className(idfr.homePage));
 	    Assert.assertTrue(homepage.isDisplayed());
 	}
 
-	
-	
 	
 	@Then("^Click on registration link$")
 	public void click_on_registration_link()  {
@@ -54,18 +52,41 @@ public class stepDef {
 	    registration_link.click();	    
 	    
 	}
-
-	@Then("^Enter firstname$")
-	public void enter_firstname()  {
+	
+	@Then("^Enter firstname , lastname , phonenumber , username , email id and password$")
+	public void Enter_data(DataTable data) {
+		
+		List<List<String>> datavalues = data.raw();
+		
+		String fname = datavalues.get(1).get(0);
+		String lname = datavalues.get(1).get(1);
+		String phone = datavalues.get(1).get(2);
+		String usernamevalue = datavalues.get(1).get(3);
+		String email = datavalues.get(1).get(4);
+		String passwordvalue = datavalues.get(1).get(5);
+		
+		
 		 WebElement first_name = driver.findElement(By.id(idfr.fname));
-		 first_name.sendKeys("Jack");	   
-	}
-
-	@Then("^Enter Lastname$")
-	public void enter_Lastname()  {
+		 first_name.sendKeys(fname);
+		 
 		 WebElement last_name = driver.findElement(By.id(idfr.lname));
-		 last_name.sendKeys("Bernard");	
-	   
+		 last_name.sendKeys(lname);
+		 
+		 WebElement phone_number = driver.findElement(By.id(idfr.phone));
+		 phone_number.sendKeys(phone);
+		 
+		 WebElement username = driver.findElement(By.id(idfr.username));
+		 username.sendKeys(usernamevalue);
+		 
+		 WebElement emailid = driver.findElement(By.id(idfr.email));
+		 emailid.sendKeys(email);
+		 
+		 WebElement password = driver.findElement(By.id(idfr.password));
+		 password.sendKeys(passwordvalue);
+		 
+		 WebElement confirmpassword = driver.findElement(By.id(idfr.confirmPassword));
+		 confirmpassword.sendKeys(passwordvalue);	 
+		
 	}
 
 	@Then("^Select marital status as single$")
@@ -101,25 +122,6 @@ public class stepDef {
 		year.selectByIndex(10);
 	}
 
-	@Then("^Enter phone number$")
-	public void enter_phone_number()  {
-		WebElement phone_number = driver.findElement(By.id(idfr.phone));
-		phone_number.sendKeys("1112223333");	   
-	    
-	}
-
-	@Then("^Enter username$")
-	public void enter_username()  {
-		WebElement username = driver.findElement(By.id(idfr.username));
-		username.sendKeys("Jbernard");	
-	  
-	}
-
-	@Then("^Enter e-mail id$")
-	public void enter_e_mail_id()  {
-		WebElement email = driver.findElement(By.id(idfr.email));
-		email.sendKeys("Jbernard@gmail.com");		 
-	}
 
 	@Then("^Enter details in about yourself section$")
 	public void enter_details_in_about_yourself_section()  {
@@ -128,17 +130,6 @@ public class stepDef {
 	  
 	}
 
-	@Then("^Enter password$")
-	public void enter_password() {	    
-		WebElement password = driver.findElement(By.id(idfr.password));
-		password.sendKeys("100#Jsontest");	
-	}
-
-	@Then("^Re-enter password to confirm$")
-	public void re_enter_password_to_confirm()  {
-		WebElement confirmpassword = driver.findElement(By.id(idfr.confirmPassword));
-		confirmpassword.sendKeys("100#Jsontest");		  
-	}
 
 	@Then("^Click submit button$")
 	public void click_submit_button() {
@@ -149,7 +140,7 @@ public class stepDef {
 	@But("^Verify that the new user is able to register account$")
 	public void verify_that_the_new_user_is_able_to_register_account()  {
 	    
-	    
+		//Assert if user is able to register the account	    
 	}	
 	
 	@Then("^Close the browser session$")
