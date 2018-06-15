@@ -12,21 +12,14 @@ public class identifiers {
      //Marital status section findbyelements and loop to select one
      public String maritalStatus = "radio_4[]";
      
-     public String hobby = "checkbox_5[]";
-     
-     
+     public String hobby = "checkbox_5[]";      
      
      public String country = "dropdown_7";
      public String month = "mm_date_8";
      public String day = "dd_date_8";
-     public String year = "yy_date_8";
-
-    
-
-     public String phone = "phone_9";
-     
+     public String year = "yy_date_8"; 
+     public String phone = "phone_9";     
      public String username  = "username";
-
      public String email = "email_1";
      public String aboutyourself = "description";
      
