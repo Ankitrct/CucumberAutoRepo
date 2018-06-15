@@ -16,8 +16,8 @@ And Click on registration link
 Then Enter firstname , lastname , phonenumber , username , email id and password
 
 | firstname  |  lastname | phonenumber | username    |  emailid        | password   |
-| Ankit	     | Tiwari    | 1111111111  | AnkitTest1  |  test@gmail.com | 234@Test12 | 
-| Sonia	     | Bali      | 2222222222  | SoniaTest1  |  test1@gmail.com| 568@Test12 | 
+| Jack	     | Parker    | 1111111111  | JackTest1   |  test@gmail.com | 234@Test12 | 
+| Gerry	     | Brown     | 2222222222  | GerryTest1  |  test1@gmail.com| 568@Test12 | 
 
 And Select marital status as single
 And Select hobby as dance
