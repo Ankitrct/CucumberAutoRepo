@@ -14,7 +14,7 @@ import cucumber.api.junit.Cucumber;
 		monochrome = true,
 		//dryRun = true,
 		//tags = {"@Smoke" , "@Regression"}, //And condition - scenario matching both the tags will be executed
-		tags = {"@Smoke , @Regression"}, // OR condition - scenario matching either of the tags will be executed
+		//tags = {"@Smoke , @Regression"}, // OR condition - scenario matching either of the tags will be executed
 		features= {"src/test/resources/com/basis/featureFiles/"},
 		glue={"com/basis/stepDefinationFiles/"},
 		
