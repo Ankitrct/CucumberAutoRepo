@@ -130,7 +130,57 @@ public class stepDef {
 	  
 	}
 
+	
+	// test Start
+	
+	@Given("^Enter \"([^\"]*)\" as firstname$")
+	public void enter_firstname(String fname) throws Throwable {
+		 WebElement first_name = driver.findElement(By.id(idfr.fname));
+		 first_name.sendKeys(fname);
+		 
+	}
 
+	@Given("^Enter \"([^\"]*)\" as Lastname$")
+	public void enter_Lastname(String lname) throws Throwable {
+		WebElement last_name = driver.findElement(By.id(idfr.lname));
+		 last_name.sendKeys(lname);
+		
+	}
+
+	@Given("^Enter \"([^\"]*)\" as contact number$")
+	public void enter_contact_number(String mobilenumber) throws Throwable {
+		 WebElement phone_number = driver.findElement(By.id(idfr.phone));
+		 phone_number.sendKeys(mobilenumber);
+	}
+
+	@Given("^Enter \"([^\"]*)\" as username$")
+	public void enter_username(String userid) throws Throwable {
+		 WebElement username = driver.findElement(By.id(idfr.username));
+		 username.sendKeys(userid);
+	}
+
+	@Given("^Enter \"([^\"]*)\" as email$")
+	public void enter_email(String emailidvalue) throws Throwable {
+		 WebElement emailid = driver.findElement(By.id(idfr.email));
+		 emailid.sendKeys(emailidvalue);
+		 
+	}
+
+	@Given("^Enter \"([^\"]*)\" as password$")
+	public void enter_password(String passwordvalue) throws Throwable {
+		 WebElement password = driver.findElement(By.id(idfr.password));
+		 password.sendKeys(passwordvalue);
+	}
+
+	@Given("^Re-enter passwrod \"([^\"]*)\" as confirm passowrd$")
+	public void confirm_passowrd(String confirmpassowrdvalue) throws Throwable {
+		 WebElement confirmpassword = driver.findElement(By.id(idfr.confirmPassword));
+		 confirmpassword.sendKeys(confirmpassowrdvalue);
+	}
+	
+	//test End	
+	
+	
 	@Then("^Click submit button$")
 	public void click_submit_button() {
 		WebElement submitbutton = driver.findElement(By.name(idfr.submit));
