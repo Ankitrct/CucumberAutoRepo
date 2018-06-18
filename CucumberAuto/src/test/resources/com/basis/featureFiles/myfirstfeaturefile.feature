@@ -4,7 +4,7 @@ Feature: Launch application
 Background: Launch url and login
 Given Launch application url
 
-@Smoke @Regression
+# @Smoke @Regression
 Scenario: Verify user is navigated to home page
 
 Given User is navigated to the home page
@@ -30,7 +30,7 @@ But Verify that the new user is able to register account
 
 
 
-@Smoke 
+# @Smoke 
 Scenario Outline: Verify user is able to register and test it with multiple dataset
 
 Given User is navigated to the home page
