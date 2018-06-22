@@ -86,14 +86,14 @@ public class stepDef {
 	public void select_marital_status_as_single() {
 		List<WebElement> marital_status = driver.findElements(By.name(idfr.maritalStatus));
 		int size = marital_status.size();
-		
-		for(int i = 0 ; i <= size ; i++) {
-			
+
+		for (int i = 0; i <= size; i++) {
+
 			String svalue = marital_status.get(i).getAttribute("value");
-			if(svalue.equals("single")) {
+			if (svalue.equals("single")) {
 				marital_status.get(i).click();
 				break;
-			}			
+			}
 		}
 	}
 
@@ -101,18 +101,16 @@ public class stepDef {
 	public void select_hobby_as_dance() {
 		List<WebElement> hobby = driver.findElements(By.name(idfr.hobby));
 		int size = hobby.size();
-		
-		for(int i = 0 ; i <= size ; i++) {
-			
+
+		for (int i = 0; i <= size; i++) {
+
 			String svalue = hobby.get(i).getAttribute("value");
-			if(svalue.equals("dance")) {
+			if (svalue.equals("dance")) {
 				hobby.get(i).click();
 				break;
-			}			
+			}
 		}
 	}
-
-	
 
 	@Then("^Select country as United States$")
 	public void select_country_as_United_States() {
