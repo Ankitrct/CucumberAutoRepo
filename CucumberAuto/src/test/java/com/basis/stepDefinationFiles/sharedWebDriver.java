@@ -14,7 +14,7 @@ public class sharedWebDriver {
 	public WebDriver setup() {
 
 		if (driver == null) {
-			String path = "C:\\Users\\atiwari\\Desktop\\Learning\\WebDrivers\\chromedriver_win32\\chromedriver.exe";
+			String path = "C:\\Users\\Ankit\\git\\CucumberAutoRepo\\CucumberAuto\\src\\test\\java\\Webdriver\\chromedriver_win32\\chromedriver.exe";
 
 			System.setProperty("webdriver.chrome.driver", path);
 			driver = new ChromeDriver();
